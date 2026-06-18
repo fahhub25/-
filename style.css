@@ -3,12 +3,12 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #F9F6F0;
+    color: #4A3E3D;
 }
 
 header {
-    background: #4CAF50;
+    background: #8B5A2B;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -28,3 +28,5 @@ header h1 {
       max-width: 800px;
       background: white;
       border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(139, 90, 43, 0.1); /* แถม: เพิ่มเงาสีน้ำตาลจางๆ ให้กล่องดูมีมิติขึ้นครับ */
+}
