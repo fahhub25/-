@@ -3,30 +3,30 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #F9F6F0;
-    color: #4A3E3D;
+    background-color: #F9F6F0; /* เปลี่ยนเป็นสีเบจอ่อนๆ ละมุนตา ไม่ขาวเกินไป */
+    color: #4A3E3D; /* เปลี่ยนสีตัวอักษรเป็นสีน้ำตาลเข้ม (ซอฟต์กว่าสีดำ) */
 }
 
 header {
-    background: #8B5A2B;
+    background: #8B5A2B; /* เปลี่ยนเป็นสีน้ำตาลอบอุ่น/สีช็อกโกแลต */
     color: white;
     padding: 20px 0;
     text-align: center;
-｝
+}
 
 header h1 {
     margin: 0;
 }
 
-  header p {
-      margin: 5px 0 0;
+header p {
+    margin: 5px 0 0;
 }
 
-  section {
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 800px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(139, 90, 43, 0.1); /* แถม: เพิ่มเงาสีน้ำตาลจางๆ ให้กล่องดูมีมิติขึ้นครับ */
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(139, 90, 43, 0.1); /* แถม: เพิ่มเงาสีน้ำตาลจางๆ ให้กล่องดูมีมิติขึ้นครับ */
 }
