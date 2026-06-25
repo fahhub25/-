@@ -10,71 +10,46 @@ body {
 header {
     background: #8B5A2B; /* แถบหัวข้อสีน้ำตาลอบอุ่นช็อกโกแลต */
     color: white;
-    padding: 20px 0;
+    padding: 40px 0; /* เพิ่มพื้นที่แนวตั้งให้ดูโปรขึ้น */
     text-align: center;
 }
 
 header h1 {
     margin: 0;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    /* [ปรับปรุง] หัวข้อสีน้ำตาลเรืองแสงละมุนๆ สะดุดตา */
+    color: #FFF;
+    text-shadow: 0 0 10px #A0522D, 0 0 20px #8B5A2B, 0 0 30px #4A3525;
+    
     /* เพิ่มลูกเล่นให้ชื่อ FAH เด้งดึ๋งเบาๆ ตอนเปิดหน้าเว็บ */
     animation: bounceIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 header p {
-    margin: 5px 0 0;
+    margin: 10px 0 0;
     color: #F5EBE6; /* ปรับข้อความรองใน header ให้เป็นสีเบจอ่อนๆ เพื่อความเข้ากัน */
+    font-size: 1.1rem;
 }
 
+/* === [ปรับปรุงใหญ่] โครงสร้างกรอบซ้อนกรอบสำหรับ Section === */
 section {
-    padding: 20px;
-    margin: 20px auto;
+    padding: 8px; /* เว้นระยะห่างเพื่อให้เห็นกรอบนอก */
+    margin: 30px auto;
     max-width: 800px;
-    background: #FFFFFF; /* กล่องเนื้อหาสีขาวคลีนเพื่อให้ตัวหนังสือและรูปภาพเด่น */
-    border: 1px solid #D7C4B7; /* เพิ่มขอบกล่องสีน้ำตาลเบจอ่อนๆ ให้ดูเป็นสัดส่วน */
-    border-radius: 8px; /* ขอบมน */
-    box-shadow: 0 4px 10px rgba(139, 8A, 43, 0.08); /* เพิ่มเงาสีน้ำตาลจางๆ ให้กล่องลอยดูมีมิติ */
+    background: #FFFFFF; /* กรอบนอกสีขาวคลีน */
+    border: 2px solid #8B5A2B; /* เส้นขอบนอกสีน้ำตาลเข้มชัดเจน */
+    border-radius: 12px; /* ขอบมนขึ้นเล็กน้อยเพื่อให้รับกับดีไซน์ */
+    box-shadow: 0 4px 15px rgba(139, 8A, 43, 0.1); /* เพิ่มเงาสีน้ำตาลจางๆ ให้กล่องลอยดูมีมิติ */
     
-    /* [เพิ่มโค้ด] ตั้งค่าเริ่มต้นสำหรับการสไลด์และเด้งดึ๋ง */
+    /* ตั้งค่าเริ่มต้นสำหรับการสไลด์และเด้งดึ๋ง */
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.5), box-shadow 0.3s ease;
     cursor: pointer;
 }
 
-/* [เพิ่มโค้ด] เมื่อเอาเมาส์ชี้ (Hover) กล่องจะขยายและเด้งดึ๋งขึ้นมา */
-section:hover {
-    transform: scale(1.03) translateY(-5px); /* ขยายขึ้น 3% และลอยขึ้น 5 พิกเซล */
-    box-shadow: 0 12px 20px rgba(139, 8A, 43, 0.15); /* เพิ่มเงาให้ดูโปร่งแสงและลอยสูงขึ้น */
-    border-color: #8B5A2B; /* เปลี่ยนสีขอบให้เข้มขึ้นตอนเด้ง */
-}
-
-/* แถม: ปรับแต่งสีของลิงก์อีเมลให้เป็นสีน้ำตาลด้วย */
-a {
-    color: #A0522D; /* สีน้ำตาลอิฐสวยๆ */
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block; /* ทำให้ลิงก์สามารถขยับเด้งดึ๋งได้เต็มที่ */
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.5);
-}
-
-a:hover {
-    color: #8B5A2B; /* เปลี่ยนเป็นน้ำตาลเข้มขึ้นเมื่อเอาเมาส์ไปชี้ */
-    transform: scale(1.1); /* ลิงก์ขยายใหญ่ขึ้นตอนชี้ */
-}
-
-/* [เพิ่มโค้ด] สร้าง Keyframes สำหรับอนิเมชันตอนเปิดเว็บ */
-@keyframes bounceIn {
-    0% {
-        transform: scale(0.3);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 0.8;
-    }
-    70% {
-        transform: scale(0.9);
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
+/* [เพิ่มโค้ด] สร้างกรอบชั้นในซ้อนเข้าไป */
+section::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top
