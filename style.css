@@ -1,55 +1,60 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #F5EBE6; /* ปรับพื้นหลังเป็นสีเบจอมน้ำตาลอ่อนๆ ละมุนมาก */
-    color: #4A3525; /* ตัวหนังสือสีน้ำตาลเข้ม (อ่านง่ายและซอฟต์กว่าสีดำ) */
+    background-color: #F5EBE6; /* พื้นหลังสีเบจอมน้ำตาลอ่อนๆ ละมุนตา */
+    color: #4A3525; /* ตัวหนังสือสีน้ำตาลเข้ม อ่านง่าย */
 }
 
 header {
     background: #8B5A2B; /* แถบหัวข้อสีน้ำตาลอบอุ่นช็อกโกแลต */
     color: white;
-    padding: 40px 0; /* เพิ่มพื้นที่แนวตั้งให้ดูโปรขึ้น */
+    padding: 40px 0; /* เพิ่มพื้นที่ให้หัวข้อดูโปร่ง สวยงาม */
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.8rem;
+    font-size: 2.8rem; /* ขยายขนาดให้เด่นชัด */
     letter-spacing: 2px;
-    /* [ปรับปรุง] หัวข้อสีน้ำตาลเรืองแสงละมุนๆ สะดุดตา */
-    color: #FFF;
-    text-shadow: 0 0 10px #A0522D, 0 0 20px #8B5A2B, 0 0 30px #4A3525;
     
-    /* เพิ่มลูกเล่นให้ชื่อ FAH เด้งดึ๋งเบาๆ ตอนเปิดหน้าเว็บ */
-    animation: bounceIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* === [เพิ่มโค้ด] แสงเรืองรองสีน้ำตาลทองอบอุ่นเปล่งออร่า === */
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #D7C4B7, 
+                 0 0 20px #A0522D, 
+                 0 0 30px #8B5A2B;
+                 
+    /* เอฟเฟกต์เด้งดึ๋งเบาๆ ตอนเปิดหน้าเว็บครั้งแรก */
+    animation: bounceIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 header p {
     margin: 10px 0 0;
-    color: #F5EBE6; /* ปรับข้อความรองใน header ให้เป็นสีเบจอ่อนๆ เพื่อความเข้ากัน */
+    color: #F5EBE6; /* ข้อความรองใน header สีเบจเข้ากัน */
     font-size: 1.1rem;
 }
 
-/* === [ปรับปรุงใหญ่] โครงสร้างกรอบซ้อนกรอบสำหรับ Section === */
 section {
-    padding: 8px; /* เว้นระยะห่างเพื่อให้เห็นกรอบนอก */
+    padding: 25px;
     margin: 30px auto;
     max-width: 800px;
-    background: #FFFFFF; /* กรอบนอกสีขาวคลีน */
-    border: 2px solid #8B5A2B; /* เส้นขอบนอกสีน้ำตาลเข้มชัดเจน */
-    border-radius: 12px; /* ขอบมนขึ้นเล็กน้อยเพื่อให้รับกับดีไซน์ */
-    box-shadow: 0 4px 15px rgba(139, 8A, 43, 0.1); /* เพิ่มเงาสีน้ำตาลจางๆ ให้กล่องลอยดูมีมิติ */
+    background: #FFFFFF; /* กล่องเนื้อหาสีขาวคลีน */
     
-    /* ตั้งค่าเริ่มต้นสำหรับการสไลด์และเด้งดึ๋ง */
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.5), box-shadow 0.3s ease;
+    /* ปรับแต่งเส้นขอบและเงาเดิมให้เข้ากับความเรืองแสง */
+    border: 2px solid #D7C4B7; 
+    border-radius: 12px; /* ปรับขอบให้มนสวยขึ้น */
+    box-shadow: 0 6px 15px rgba(139, 8A, 43, 0.06); 
+    
+    /* ตั้งค่าสำหรับการเด้งดึ๋งเวลา Hover */
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.5), 
+                box-shadow 0.4s ease, 
+                border-color 0.4s ease;
     cursor: pointer;
 }
 
-/* [เพิ่มโค้ด] สร้างกรอบชั้นในซ้อนเข้าไป */
-section::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top
+/* === [ปรับปรุงโค้ด] เมื่อเอาเมาส์ชี้ (Hover) กล่องจะขยายและเด้งดึ๋งนุ่มๆ === */
+section:hover {
+    transform: scale(1.03) translateY(-8px); /* พองตัวขึ้น 3% และลอยขึ้นเยลลี่ๆ */
+    border
