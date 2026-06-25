@@ -16,6 +16,8 @@ header {
 
 header h1 {
     margin: 0;
+    /* เพิ่มลูกเล่นให้ชื่อ FAH เด้งดึ๋งเบาๆ ตอนเปิดหน้าเว็บ */
+    animation: bounceIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 header p {
@@ -31,6 +33,17 @@ section {
     border: 1px solid #D7C4B7; /* เพิ่มขอบกล่องสีน้ำตาลเบจอ่อนๆ ให้ดูเป็นสัดส่วน */
     border-radius: 8px; /* ขอบมน */
     box-shadow: 0 4px 10px rgba(139, 8A, 43, 0.08); /* เพิ่มเงาสีน้ำตาลจางๆ ให้กล่องลอยดูมีมิติ */
+    
+    /* [เพิ่มโค้ด] ตั้งค่าเริ่มต้นสำหรับการสไลด์และเด้งดึ๋ง */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.5), box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* [เพิ่มโค้ด] เมื่อเอาเมาส์ชี้ (Hover) กล่องจะขยายและเด้งดึ๋งขึ้นมา */
+section:hover {
+    transform: scale(1.03) translateY(-5px); /* ขยายขึ้น 3% และลอยขึ้น 5 พิกเซล */
+    box-shadow: 0 12px 20px rgba(139, 8A, 43, 0.15); /* เพิ่มเงาให้ดูโปร่งแสงและลอยสูงขึ้น */
+    border-color: #8B5A2B; /* เปลี่ยนสีขอบให้เข้มขึ้นตอนเด้ง */
 }
 
 /* แถม: ปรับแต่งสีของลิงก์อีเมลให้เป็นสีน้ำตาลด้วย */
@@ -38,9 +51,30 @@ a {
     color: #A0522D; /* สีน้ำตาลอิฐสวยๆ */
     text-decoration: none;
     font-weight: bold;
+    display: inline-block; /* ทำให้ลิงก์สามารถขยับเด้งดึ๋งได้เต็มที่ */
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.5);
 }
 
 a:hover {
-    text-decoration: underline;
     color: #8B5A2B; /* เปลี่ยนเป็นน้ำตาลเข้มขึ้นเมื่อเอาเมาส์ไปชี้ */
+    transform: scale(1.1); /* ลิงก์ขยายใหญ่ขึ้นตอนชี้ */
+}
+
+/* [เพิ่มโค้ด] สร้าง Keyframes สำหรับอนิเมชันตอนเปิดเว็บ */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
