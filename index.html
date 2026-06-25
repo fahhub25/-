@@ -1,58 +1,214 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="เว็บไซต์แสดงผลงานและทักษะด้านบิวตี้การแต่งหน้าสายฝอสุดมั่นใจของ FAH">
-    <title>FAH - Makeup Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="เว็บไซต์แสดงผลงานและทักษะด้านบิวตี้การแต่งหน้าสายฝอสุดมั่นใจของ FAH">
+    <title>FAH - Makeup Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F5EBE6; /* สีเบจอมน้ำตาลอ่อนๆ ละมุนตา */
+            margin: 0;
+            color: #4A3525; /* ตัวหนังสือสีน้ำตาลเข้ม อ่านง่ายและซอฟต์ */
+        }
+
+        header {
+            background-color: #8B5A2B; /* แถบหัวข้อสีน้ำตาลอบอุ่นช็อกโกแลต */
+            color: #fff;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            letter-spacing: 2px;
+            /* แสงเรืองรองสีน้ำตาลทองอบอุ่นเปล่งออร่า */
+            text-shadow: 0 0 10px #D7C4B7, 
+                         0 0 20px #A0522D, 
+                         0 0 30px #8B5A2B;
+            /* เอฟเฟกต์เด้งดึ๋งตอนเปิดหน้าเว็บครั้งแรก */
+            animation: bounceIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            color: #F5EBE6; /* ข้อความรองสีเบจอ่อนเข้ากัน */
+        }
+
+        section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 15px; /* เว้นพื้นที่ให้กรอบซ้อนกรอบ */
+            background-color: #fff; /* กรอบนอกสีขาวคลีน */
+            box-shadow: 0 6px 15px rgba(139, 8A, 43, 0.06);
+            border-radius: 12px; /* ขอบมนขึ้น */
+            border: 2px solid #8B5A2B; /* เส้นขอบนอกสีน้ำตาลเข้ม */
+            position: relative;
+            
+            /* ตั้งค่าสำหรับการเด้งดึ๋งเวลา Hover */
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.5), 
+                        box-shadow 0.4s ease, 
+                        border-color 0.4s ease;
+            cursor: pointer;
+        }
+
+        /* สร้างกรอบดีไซน์ชั้นในซ้อนเข้าไปโดยไม่ต้องแก้ HTML */
+        section::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 6px; left: 6px; right: 6px; bottom: 6px;
+            border: 1px dashed #D7C4B7; /* เส้นประด้านในเพิ่มกิมมิค */
+            border-radius: 8px;
+            pointer-events: none;
+        }
+
+        /* ปรับตำแหน่งเนื้อหาข้างในไม่ให้บังเส้นประ */
+        section > h2, section > p, section > div, section > ul {
+            position: relative;
+            z-index: 1;
+            padding: 5px 15px;
+        }
+
+        h2 {
+            color: #8B5A2B;
+            border-bottom: 2px solid #D7C4B7;
+            padding-bottom: 10px;
+            text-shadow: 0 0 8px rgba(160, 82, 45, 0.15); /* เรืองแสงเบาๆ */
+        }
+
+        /* เมื่อเอาเมาส์ชี้ (Hover) กล่องจะขยายและเด้งดึ๋งนุ่มๆ */
+        section:hover {
+            transform: scale(1.02) translateY(-6px);
+            border-color: #A0522D;
+            box-shadow: 0 20px 30px rgba(139, 8A, 43, 0.15), 
+                        0 0 15px rgba(160, 82, 45, 0.2); 
+        }
+
+        .project {
+            margin-bottom: 20px;
+            background: #FAF6F4; /* กล่องย่อยด้านใน */
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #E8DDD7;
+            transition: background 0.3s;
+        }
+
+        .project:hover {
+            background: #FFFFFF;
+            border-color: #8B5A2B;
+        }
+
+        .project h3 {
+            color: #8B5A2B;
+            margin-top: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #FAF6F4;
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #A0522D; /* เพิ่มขีดข้างสีน้ำตาลอิฐ */
+            font-weight: 500;
+        }
+
+        /* ตกแต่งกรอบใส่รูปภาพวิชาคอมฯ */
+        img {
+            display: block;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 3px solid #FAF6F4;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #8B5A2B;
+            color: #fff;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #F5EBE6;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #FFFFFF;
+            transform: scale(1.05); /* ลิงก์ขยายตัวเล็กน้อย */
+        }
+
+        /* อนิเมชันเด้งดึ๋งตอนเปิดเว็บ */
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>สวัสดี! ฉันชื่อ FAH</h1>
-        <p>ยินดีต้อนรับสู่พื้นที่รวมไอเดียแต่งหน้าสายฝอสุดปังและความภาคภูมิใจของฉัน</p>
-    </header>
+    <header>
+        <h1>สวัสดี! ฉันชื่อ FAH</h1>
+        <p>ยินดีต้อนรับสู่พื้นที่รวมไอเดียแต่งหน้าสายฝอสุดปังและความภาคภูมิใจของฉัน</p>
+    </header>
 
-    <section id="about">
-        <h2>เกี่ยวกับฉัน</h2>
-        <p>ฉันเป็นนักเรียนคนหนึ่งที่มีความหลงใหลในการแต่งหน้า โดยเฉพาะการสร้างสรรค์ลุคแต่งหน้าสายฝอ (Western Style) ที่เน้นความคมชัด ความมั่นใจ และการขับเน้นโครงหน้าให้โดดเด่น ฉันสนุกทุกครั้งที่ได้ทดลองเทคนิคใหม่ๆ ค้นคว้าเรื่องเครื่องสำอาง ภูมิใจในทุกๆ ลุคที่ได้ฟาดฝีมือ และตื่นเต้นที่จะได้พัฒนาทักษะบิวตี้ของตัวเองให้เก่งขึ้นในทุกๆ วัน</p>
-    </section>
+    <section id="about">
+        <h2>เกี่ยวกับฉัน</h2>
+        <p>ฉันเป็นนักเรียนคนหนึ่งที่มีความหลงใหลในการแต่งหน้า โดยเฉพาะการสร้างสรรค์ลุคแต่งหน้าสายฝอ (Western Style) ที่เน้นความคมชัด ความมั่นใจ และการขับเน้นโครงหน้าให้โดดเด่น ฉันสนุกทุกครั้งที่ได้ทดลองเทคนิคใหม่ๆ ค้นคว้าเรื่องเครื่องสำอาง ภูมิใจในทุกๆ ลุคที่ได้ฟาดฝีมือ และตื่นเต้นที่จะได้พัฒนาทักษะบิวตี้ของตัวเองให้เก่งขึ้นในทุกๆ วัน</p>
+    </section>
 
-    <section id="projects">
-        <h2>ผลงานของฉัน</h2>
-        <div class="project">
-            <h3>การแต่งหน้าสายฝอซอฟต์ๆ แต่อินเตอร์ (Soft Glam Makeup)</h3>
-            <p>การสร้างสรรค์ลุคสายฝอที่แต่งได้ในชีวิตประจำวัน เน้นงานผิวเนื้อแมตต์ คิ้วอุยตั้งเป็นทรงที่เป็นธรรมชาติ ตาโทนสีน้ำตาลคลาสสิก และปากสีนู้ดสุดจึ้ง เพิ่มความมั่นใจเกินร้อย</p>
-        </div>
-        <div class="project">
-            <h3>การแต่งหน้าลุคฝาดคัดเบ้าแน่น (Full Glam & Cut Crease Challenge)</h3>
-            <p>การฝึกฝนเทคนิคขั้นสูงด้วยการคัดเบ้าตาแบบ Cut Crease ให้ชั้นตาดูคมลึกชัดเจน กรีดอายไลเนอร์แบบ Foxy Eyes เฉี่ยวๆ คอนทัวร์กรอบหน้าให้มีมิติ และทาปากเนื้อแมตต์อวบอิ่มตามเทรนด์ตะวันตก</p>
-        </div>
-    </section>
+    <section id="projects">
+        <h2>ผลงานของฉัน</h2>
+        <div class="project">
+            <h3>การแต่งหน้าสายฝอซอฟต์ๆ แต่อินเตอร์ (Soft Glam Makeup)</h3>
+            <p>การสร้างสรรค์ลุคสายฝอที่แต่งได้ในชีวิตประจำวัน เน้นงานผิวเนื้อแมตต์ คิ้วอุยตั้งเป็นทรงที่เป็นธรรมชาติ ตาโทนสีน้ำตาลคลาสสิก และปากสีนู้ดสุดจึ้ง เพิ่มความมั่นใจเกินร้อย</p>
+        </div>
+        <div class="project">
+            <h3>การแต่งหน้าลุคฝาดคัดเบ้าแน่น (Full Glam & Cut Crease Challenge)</h3>
+            <p>การฝึกฝนเทคนิคขั้นสูงด้วยการคัดเบ้าตาแบบ Cut Crease ให้ชั้นตาดูคมลึกชัดเจน กรีดอายไลเนอร์แบบ Foxy Eyes เฉี่ยวๆ คอนทัวร์กรอบหน้าให้มีมิติ และทาปากเนื้อแมตต์อวบอิ่มตามเทรนด์ตะวันตก</p>
+        </div>
+    </section>
 
-    <section id="skills">
-        <h2>ทักษะของฉัน</h2>
-        <ul>
-            <li>เทคนิคการจัดโครงหน้า การคอนทัวร์และไฮไลท์พุ่งๆ (Contouring & Highlighting)</li>
-            <li>การวาดคิ้วทรงสายฝอและการจัดทรงคิ้วให้ตั้งฟู (Feathery Brows)</li>
-            <li>เทคนิคการแต่งตา คัดเบ้าเฉี่ยวคม และการกรีดไลเนอร์แบบวิงค์หางตา (Cut Crease & Winged Liner)</li>
-            <li>ความรู้เกี่ยวกับเนื้อผลิตภัณฑ์เครื่องสำอางและการเลือกใช้ลิปสติกเนื้อแมตต์ให้ติดทน</li>
-        </ul>
-    </section>
+    <section id="skills">
+        <h2>ทักษะของฉัน</h2>
+        <ul>
+            <li>เทคนิคการจัดโครงหน้า การคอนทัวร์และไฮไลท์พุ่งๆ (Contouring & Highlighting)</li>
+            <li>การวาดคิ้วทรงสายฝอและการจัดทรงคิ้วให้ตั้งฟู (Feathery Brows)</li>
+            <li>เทคนิคการแต่งตา คัดเบ้าเฉี่ยวคม และการกรีดไลเนอร์แบบวิงค์หางตา (Cut Crease & Winged Liner)</li>
+            <li>ความรู้เกี่ยวกับเนื้อผลิตภัณฑ์เครื่องสำอางและการเลือกใช้ลิปสติกเนื้อแมตต์ให้ติดทน</li>
+        </ul>
+    </section>
    <section id="skills">
-        <h2>ผลงานวิชาคอมพิวเตอร์</h2>
-        <ul>
-            <li>งานที่1อินโฟกราฟฟิค</li>
+        <h2>ผลงานวิชาคอมพิวเตอร์</h2>
+        <ul>
+            <li>งานที่1อินโฟกราฟฟิค</li>
             <img src="213.png" width="55%">
-            <li>งานที่2</li>
-            <li>งานที่3</li>
-        </ul>
-    </section>
+            <li>งานที่2</li>
+            <li>งานที่3</li>
+        </ul>
+    </section>
 
-    <footer>
-        <p>ติดต่อฉันได้ที่: <a href="mailto:bakhn8920@gmail.com">bakhn8920@gmail.com</a></p>
-        <p>&copy; <span id="year"></span> FAH. All rights reserved.</p>
-    </footer>
+    <footer>
+        <p>ติดต่อฉันได้ที่: <a href="mailto:bakhn8920@gmail.com">bakhn8920@gmail.com</a></p>
+        <p>&copy; <span id="year"></span> FAH. All rights reserved.</p>
+    </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+</html>
