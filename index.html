@@ -5,44 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="เว็บไซต์แสดงผลงานและทักษะด้านบิวตี้การแต่งหน้าสายฝอสุดมั่นใจของ FAH">
     <title>FAH - Makeup Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Anuphan:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h1>สวัสดี! ฉันชื่อ FAH</h1>
-        <p>ยินดีต้อนรับสู่พื้นที่รวมไอเดียแต่งหน้าสายฝอสุดปังและความภาคภูมิใจของฉัน</p>
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <h1>FAH MAKEUP</h1>
+            <p>ยินดีต้อนรับสู่พื้นที่รวมไอเดียแต่งหน้าสายฝอสุดปังและความภาคภูมิใจของฉัน</p>
+            <a href="#projects" class="btn">ดูผลงานของฉัน</a>
+        </div>
     </header>
 
-    <section id="about">
-        <h2>เกี่ยวกับฉัน</h2>
-        <p>ฉันเป็นนักเรียนคนหนึ่งที่มีความหลงใหลในการแต่งหน้า โดยเฉพาะการสร้างสรรค์ลุคแต่งหน้าสายฝอ (Western Style) ที่เน้นความคมชัด ความมั่นใจ และการขับเน้นโครงหน้าให้โดดเด่น ฉันสนุกทุกครั้งที่ได้ทดลองเทคนิคใหม่ๆ ค้นคว้าเรื่องเครื่องสำอาง ภูมิใจในทุกๆ ลุคที่ได้ฟาดฝีมือ และตื่นเต้นที่จะได้พัฒนาทักษะบิวตี้ของตัวเองให้เก่งขึ้นในทุกๆ วัน</p>
-    </section>
+    <div class="container">
+        <section id="about">
+            <h2>เกี่ยวกับฉัน</h2>
+            <div class="divider"></div>
+            <p>ฉันเป็นนักเรียนคนหนึ่งที่มีความหลงใหลในการแต่งหน้า โดยเฉพาะการสร้างสรรค์ลุคแต่งหน้าสายฝอ (Western Style) ที่เน้นความคมชัด ความมั่นใจ และการขับเน้นโครงหน้าให้โดดเด่น ฉันสนุกทุกครั้งที่ได้ทดลองเทคนิคใหม่ๆ ค้นคว้าเรื่องเครื่องสำอาง ภูมิใจในทุกๆ ลุคที่ได้ฟาดฝีมือ และตื่นเต้นที่จะได้พัฒนาทักษะบิวตี้ของตัวเองให้เก่งขึ้นในทุกๆ วัน</p>
+        </section>
 
-    <section id="projects">
-        <h2>ผลงานของฉัน</h2>
-        <div class="project">
-            <h3>การแต่งหน้าสายฝอซอฟต์ๆ แต่อินเตอร์ (Soft Glam Makeup)</h3>
-            <p>การสร้างสรรค์ลุคสายฝอที่แต่งได้ในชีวิตประจำวัน เน้นงานผิวเนื้อแมตต์ คิ้วอุยตั้งเป็นทรงที่เป็นธรรมชาติ ตาโทนสีน้ำตาลคลาสสิก และปากสีนู้ดสุดจึ้ง เพิ่มความมั่นใจเกินร้อย</p>
-        </div>
-        <div class="project">
-            <h3>การแต่งหน้าลุคฝาดคัดเบ้าแน่น (Full Glam & Cut Crease Challenge)</h3>
-            <p>การฝึกฝนเทคนิคขั้นสูงด้วยการคัดเบ้าตาแบบ Cut Crease ให้ชั้นตาดูคมลึกชัดเจน กรีดอายไลเนอร์แบบ Foxy Eyes เฉี่ยวๆ คอนทัวร์กรอบหน้าให้มีมิติ และทาปากเนื้อแมตต์อวบอิ่มตามเทรนด์ตะวันตก</p>
-        </div>
-    </section>
+        <section id="projects">
+            <h2>ผลงานของฉัน</h2>
+            <div class="divider"></div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-img-placeholder">💅 Soft Glam Look</div>
+                    <div class="project-info">
+                        <h3>Soft Glam Makeup</h3>
+                        <p>การสร้างสรรค์ลุคสายฝอที่แต่งได้ในชีวิตประจำวัน เน้นงานผิวเนื้อแมตต์ คิ้วอุยตั้งเป็นทรงที่เป็นธรรมชาติ ตาโทนสีน้ำตาลคลาสสิก และปากสีนู้ดสุดจึ้ง เพิ่มความมั่นใจเกินร้อย</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img-placeholder">💋 Full Glam Look</div>
+                    <div class="project-info">
+                        <h3>Full Glam & Cut Crease</h3>
+                        <p>การฝึกฝนเทคนิคขั้นสูงด้วยการคัดเบ้าตาแบบ Cut Crease ให้ชั้นตาดูคมลึกชัดเจน กรีดอายไลเนอร์แบบ Foxy Eyes เฉี่ยวๆ คอนทัวร์กรอบหน้าให้มีมิติ และทาปากเนื้อแมตต์อวบอิ่มตามเทรนด์ตะวันตก</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="skills">
-        <h2>ทักษะของฉัน</h2>
-        <ul>
-            <li>เทคนิคการจัดโครงหน้า การคอนทัวร์และไฮไลท์พุ่งๆ (Contouring & Highlighting)</li>
-            <li>การวาดคิ้วทรงสายฝอและการจัดทรงคิ้วให้ตั้งฟู (Feathery Brows)</li>
-            <li>เทคนิคการแต่งตา คัดเบ้าเฉี่ยวคม และการกรีดไลเนอร์แบบวิงค์หางตา (Cut Crease & Winged Liner)</li>
-            <li>ความรู้เกี่ยวกับเนื้อผลิตภัณฑ์เครื่องสำอางและการเลือกใช้ลิปสติกเนื้อแมตต์ให้ติดทน</li>
-        </ul>
-    </section>
+        <section id="skills">
+            <h2>ทักษะของฉัน</h2>
+            <div class="divider"></div>
+            <ul class="skills-list">
+                <li><span>✦</span> เทคนิคการจัดโครงหน้า การคอนทัวร์และไฮไลท์พุ่งๆ (Contouring & Highlighting)</li>
+                <li><span>✦</span> การวาดคิ้วทรงสายฝอและการจัดทรงคิ้วให้ตั้งฟู (Feathery Brows)</li>
+                <li><span>✦</span> เทคนิคการแต่งตา คัดเบ้าเฉี่ยวคม และการกรีดไลเนอร์แบบวิงค์หางตา (Cut Crease & Winged Liner)</li>
+                <li><span>✦</span> ความรู้เกี่ยวกับเนื้อผลิตภัณฑ์เครื่องสำอางและการเลือกใช้ลิปสติกเนื้อแมตต์ให้ติดทน</li>
+            </ul>
+        </section>
+    </div>
 
     <footer>
-        <p>ติดต่อฉันได้ที่: <a href="mailto:bakhn8920@gmail.com">bakhn8920@gmail.com</a></p>
-        <p>&copy; <span id="year"></span> FAH. All rights reserved.</p>
+        <p>CONTACT ME</p>
+        <a href="mailto:bakhn8920@gmail.com" class="email-link">bakhn8920@gmail.com</a>
+        <p class="copyright">&copy; <span id="year"></span> FAH. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
